@@ -6,7 +6,6 @@ const Subscriber = require('./models/subscribers');
 const ObjectId = require("mongoose");
 
 
-// Your code goes here
 app.get('/subscribers', (req, res) => {
     Subscriber.find().then(subscribers => res.send(subscribers));
     return;
@@ -20,7 +19,6 @@ app.get('/subscribers/:id', (req, res) => {
     Subscriber.find({_id : id}).then(subscribers => subscribers.map(subscribers => res.send(subscribers))).catch(error => res.status(400).send({message: error.message}));
     return;
 });
-
 
 
 
